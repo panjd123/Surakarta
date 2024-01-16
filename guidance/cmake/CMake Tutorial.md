@@ -4,10 +4,12 @@ ____
 > CMake is the de-facto standard for building C++ code, with over 2 million downloads a month. It’s a powerful, comprehensive solution for managing the software build process
 
 以上摘自CMake官网文档
+
 简单来说，CMake是一种跨平台的C++项目构建工具。通过`CMakeLists.txt`指定构建项目规则，包括但不限于对第三方库的加载与链接，头文件目录的引入等等。用户只需要编写`CMakeLists.txt`， CMake 就可以为项目生成`.ninja`或`.makefile`文件，作为生成器的`ninja`与`make`据此对项目进行编译。
 ____
 ### CMake下载
 [CMake官网地址](https://cmake.org/)
+
 Windows环境下CMake下载与环境变量配置教程不胜枚举，例如[这篇博客](https://blog.csdn.net/didi_ya/article/details/123029415)，大家可以善用搜索引擎自行查阅。
 环境变量配置完成后，在Windows命令行输入`cmake --version`
 若终端输出cmake版本信息，即为配置成功。
@@ -58,6 +60,7 @@ ____
   - `EXACT`关键字若被指定，表示查找版本必须完全与指定版本相同而非兼容即可
   - `REQUIRED`关键字若被指定，表示该第三方库为必需，若查找失败 CMake 停止执行
   - `COMPONENTS`关键字若被指定，表示查到的库中必须包含全部`[components...]`，否则 CMake 停止执行
+  
     以 QT 库为例
     ```CMake
     find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
