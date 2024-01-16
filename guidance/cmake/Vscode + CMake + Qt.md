@@ -1,6 +1,6 @@
-## Vscode + CMake 编译 Qt6 项目
+# Vscode + CMake 编译 Qt6 项目
 ___
-### 环境配置
+## 环境配置
 - Windows 11
 - Qt Creater 6.6.1
   请将库`Qt6`添加至`环境变量-系统变量-Path`
@@ -14,7 +14,7 @@ ___
 请在`vscode-setting`中搜索`cmake`，设置你的 cmake 绝对路径
 ![pic](VCcmake.png)
 ___
-### 编译步骤
+## 编译步骤
 - 使用 Qt 创建 Widgets 项目，构建套件推荐选择`Desktop Ot 6.61 MinGW 64-bit`
 ![pic1](VC1.png)
 - 使用 Vscode 打开项目文件夹，`ctrl+shift+p`搜索`CMake:Edit`
@@ -35,10 +35,12 @@ ___
     ```
     路径请自行替换
 - 选择工具包
+  
   `ctrl+shift+p`输入指令`CMake: Select a Kit`
   ![pic3](VCs.png)
   为该项目选择你刚刚添加的 Kit 包即可
 - 配置与生成
+  
   `ctrl+shift+p`输入`CMake: Configure`
   ![pic4](VCconfig.png)
   `ctrl+shift+p`输入`CMake: Build`
