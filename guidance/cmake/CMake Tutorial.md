@@ -1,18 +1,18 @@
-##CMake 简易教程
+## CMake 简易教程
 ____
-###什么是CMake
+### 什么是CMake
 > CMake is the de-facto standard for building C++ code, with over 2 million downloads a month. It’s a powerful, comprehensive solution for managing the software build process
 
 以上摘自CMake官网文档
 简单来说，CMake是一种跨平台的C++项目构建工具。通过`CMakeLists.txt`指定构建项目规则，包括但不限于对第三方库的加载与链接，头文件目录的引入等等。用户只需要编写`CMakeLists.txt`， CMake 就可以为项目生成`.ninja`或`.makefile`文件，作为生成器的`ninja`与`make`据此对项目进行编译。
 ____
-###CMake下载
+### CMake下载
 [CMake官网地址](https://cmake.org/)
 Windows环境下CMake下载与环境变量配置教程不胜枚举，例如[这篇博客](https://blog.csdn.net/didi_ya/article/details/123029415)，大家可以善用搜索引擎自行查阅。
 环境变量配置完成后，在Windows命令行输入`cmake --version`
 若终端输出cmake版本信息，即为配置成功。
 ____
-###CMake基本命令
+### CMake基本命令
 - 指定项目CMake最低版本
   ```CMake
   cmake_minimum_required(VERSION 3.5)
@@ -82,7 +82,7 @@ set(CMAKE_AUTOMOC ON) #自动处理信号槽
 set(CMAKE_AUTORCC ON) #自动处理qrc资源文件
 ```
 ___
-###生成器的选择
+### 生成器的选择
 Windows 系统默认采用`Visual Studio 2019`生成器，考虑到本课程大作业的项目规模与构建速度要求，推荐各位使用`ninja`生成器。
 Windows 系统下可以使用 Python 包管理器安装 ninja
 `pip install ninja`
@@ -90,7 +90,7 @@ Windows 系统下可以使用 Python 包管理器安装 ninja
 在命令行输入`ninja --version`可检查`ninja`是否已安装
 
 ___
-###End
+### End
 本教程的目的是在短时间内阐释最简单的 Qt CMake 项目配置，之于 CMake 技术仅仅是冰山一角，鼓励同学们进一步自主学习以熟练掌握 CMake 技术。
 [CMake 官方文档](https://cmake.org/documentation/)
 [一些不错的中文教程](https://zhuanlan.zhihu.com/p/500002865)
