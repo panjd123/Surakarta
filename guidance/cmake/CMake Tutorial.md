@@ -92,5 +92,7 @@ Windows 系统下可以使用 Python 包管理器安装 ninja
 ___
 ### End
 本教程的目的是在短时间内阐释最简单的 Qt CMake 项目配置，之于 CMake 技术仅仅是冰山一角，鼓励同学们进一步自主学习以熟练掌握 CMake 技术。
+
 [CMake 官方文档](https://cmake.org/documentation/)
+
 [一些不错的中文教程](https://zhuanlan.zhihu.com/p/500002865)
