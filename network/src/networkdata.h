@@ -13,6 +13,7 @@ enum class OPCODE : int {
     GIVEUP_END_OP,
     LEAVE_OP,
     CHAT_OP,
+    END_OP,
 };
 
 class InvalidMessage : public QException {
