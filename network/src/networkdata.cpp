@@ -1,9 +1,10 @@
 #include "networkdata.h"
 
-NetworkData::NetworkData(OPCODE op, QString data1, QString data2)
+NetworkData::NetworkData(OPCODE op, QString data1, QString data2, QString data3)
     : op(op)
     , data1(data1)
-    , data2(data2) {}
+    , data2(data2)
+    , data3(data3) {}
 
 NetworkData::NetworkData(QByteArray message) {
     if (message.isEmpty())
@@ -13,10 +14,11 @@ NetworkData::NetworkData(QByteArray message) {
     QJsonDocument doc = QJsonDocument::fromJson(message, &jserr);
     if (doc.isObject()) {
         QJsonObject recv_json = doc.object();
-        if (recv_json.contains("op") && recv_json.contains("data1") && recv_json.contains("data2")) {
+        if (recv_json.contains("op") && recv_json.contains("data1") && recv_json.contains("data2") && recv_json.contains("data3")) {
             this->op = static_cast<OPCODE>(recv_json.value("op").toInt());
             this->data1 = recv_json.value("data1").toString();
             this->data2 = recv_json.value("data2").toString();
+            this->data3 = recv_json.value("data3").toString();
         }
         else
             throw InvalidMessage(message);
@@ -30,6 +32,7 @@ QByteArray NetworkData::encode() {
     send_json.insert("op", static_cast<int>(op));
     send_json.insert("data1", data1);
     send_json.insert("data2", data2);
+    send_json.insert("data3", data3);
     QJsonDocument doc;
     doc.setObject(send_json);
     QByteArray block = doc.toJson(QJsonDocument::Compact);

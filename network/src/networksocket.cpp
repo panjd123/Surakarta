@@ -29,7 +29,7 @@ void NetworkSocket::receiveData() {
             NetworkData recv(block);
             qDebug() << "Client: "
                      << static_cast<int>(recv.op) 
-                     << ' ' << recv.data1 << ' ' << recv.data2 << Qt::endl;
+                     << ' ' << recv.data1 << ' ' << recv.data2 << ' ' << recv.data3 << Qt::endl;
             emit receive(recv);
         }
         catch (const InvalidMessage& e) {

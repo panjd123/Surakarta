@@ -21,7 +21,7 @@ void NetworkServer::receiveData(QObject* obj) {
             NetworkData data(block);
             qDebug() << "Server: "
                      << static_cast<int>(data.op) 
-                     << ' ' << data.data1 << ' ' << data.data2 << Qt::endl;
+                     << ' ' << data.data1 << ' ' << data.data2  << ' ' << data.data3 << Qt::endl;
             emit receive(client, data);
         }
         catch (const InvalidMessage& m) {
@@ -33,7 +33,7 @@ void NetworkServer::receiveData(QObject* obj) {
 void NetworkServer::send(QTcpSocket* client, NetworkData data) {
     qDebug() << "send " 
              << static_cast<int>(data.op) 
-             << data.data1 << data.data2 << Qt::endl;
+             << data.data1 << data.data2 << data.data3 << Qt::endl;
     client->write(data.encode());
     client->flush();
 }
