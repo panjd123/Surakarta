@@ -84,6 +84,33 @@ set(CMAKE_AUTOUIC ON) #自动处理ui文件
 set(CMAKE_AUTOMOC ON) #自动处理信号槽
 set(CMAKE_AUTORCC ON) #自动处理qrc资源文件
 ```
+
+___
+
+## Qt 资源文件的添加
+在 Qt CMake 项目中，添加资源文件需要如下配置
+```CMake
+qt6_add_resources(<TARGET> <RESOURCE_NAME>
+                  [PREFIX <PATH>]
+                  [LANG <LANGUAGE>]
+                  [BASE <PATH>]
+                  [OUTPUT_TARGETS <VARIABLE_NAME>]
+                  [FILES ...] [OPTIONS ...])
+```
+`PREFIX`参数为访问资源文件的路径前缀，从`Qt6.5`版本开始此参数可选，默认使用`/`作为前缀。
+`LANG`指定资源区域设置，对应于`.qrc`文件格式的`XML`属性`lang`。
+`BASE`与文件别名有关，为文件路径中文件别名的根点。
+下面是一个简单的使用示例
+```CMake
+qt6_add_resources(RESOURCES /test/Test.qrc)
+qt_add_executable(
+    ${PROJECT_NAME}
+    ${PROJECT_SOURCES}
+    ${RESOURCES} # 添加资源文件
+)
+```
+注意以上指令在`Qt6`的`Core`组件中定义，请在引入`QT`库后使用。
+
 ___
 ## 生成器的选择
 Windows 系统默认采用`Visual Studio 2019`生成器，考虑到本课程大作业的项目规模与构建速度要求，推荐各位使用`ninja`生成器。
