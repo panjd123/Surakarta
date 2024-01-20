@@ -10,7 +10,7 @@
 
 **注意：** 网络接口在 Qt6 下实现，不保证在更早版本的 Qt 上能正常使用。
 
-> TCP 中必须是客户端向服务端连接，服务端可以同时被多个客户端连接，双方是不对等的。虽然本次对局是1对1，但在邀请阶段，也可能出现同时被多个客户端邀请的情况需要处理。
+> TCP 中必须是客户端向服务端连接，服务端可以同时被多个客户端连接，双方是不对等的。本次对局是1对1，服务端只需考虑处理两个客户端连接的情况。
 
 ## `NetworkServer` 类
 
@@ -105,7 +105,7 @@ connect(this->server, &NetworkServer::receive, this, &ServerWindow::receiveData)
 ### 公有方法
 
 ```cpp
-NetworkData::NetworkData(OPCODE op, QString data1, QString data2);
+NetworkData::NetworkData(OPCODE op, QString data1, QString data2, QString data3);
 ```
 构造函数。用于构造需要从本机发送出去的消息。
 
@@ -115,6 +115,7 @@ NetworkData::NetworkData(OPCODE op, QString data1, QString data2);
 	- 其类型 `OPCODE` 是一个枚举类，同样定义在 `networkdata.h` 中。
 + `data1`: 当前操作的第一个数据段。
 + `data2`: 当前操作的第二个数据段。
++ `data3`: 当前操作的第三个数据段。
 
 ----------
 
@@ -200,7 +201,7 @@ QTcpSocket* NetworkSocket::base() const;
 void receive(NetworkData data);
 ```
 
-当前客户端收到来自服务端的消息时发送 `reveive` 信号。
+当前客户端收到来自服务端的消息时发送 `receive` 信号。
 
 参数列表：
 
