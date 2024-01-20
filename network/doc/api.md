@@ -4,6 +4,8 @@
 另外，我们并没有完全封装，有一些重要的功能你要直接使用基类函数，比如 `NetworkServer::listen`，这意味着你们需要在结合 demo 阅读的同时用好 Qt 的 F1 文档
 来理解我们没有提到的部分。
 
+`demo`在[这个仓库](https://github.com/JongMelon/QtNetworkDemo)中
+
 对应文件在目录 [src](../src/) 下
 
 作者：[megaowier](https://blog.megaowier.cc/)
