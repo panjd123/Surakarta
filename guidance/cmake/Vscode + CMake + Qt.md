@@ -37,6 +37,7 @@ ___
 - 选择工具包
   
   `ctrl+shift+p`输入指令`CMake: Select a Kit`
+  如果找不到该指令，请输入`CMake: Quick Start`
   ![pic3](VCs.png)
   为该项目选择你刚刚添加的 Kit 包即可
 - 配置与生成
