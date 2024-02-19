@@ -12,13 +12,13 @@ ___
 - Vscode CMake Extension
 - Vscode CMake Tools Extension
 请在`vscode-setting`中搜索`cmake`，设置你的 cmake 绝对路径
-![pic](VCcmake.png)
+![pic](./imgs/VCcmake.png)
 ___
 ## 编译步骤
 - 使用 Qt 创建 Widgets 项目，构建套件推荐选择`Desktop Ot 6.61 MinGW 64-bit`
-![pic1](VC1.png)
+![pic1](./imgs/VC1.png)
 - 使用 Vscode 打开项目文件夹，`ctrl+shift+p`搜索`CMake:Edit`
-![pic2](VC2.png)
+![pic2](./imgs/VC2.png)
 打开 `User-Local CMake Kits`，在该 json 文件添加如下内容
     ```json
     {
@@ -38,12 +38,12 @@ ___
   
   `ctrl+shift+p`输入指令`CMake: Select a Kit`
   如果找不到该指令，请输入`CMake: Quick Start`
-  ![pic3](VCs.png)
+  ![pic3](./imgs/VCs.png)
   为该项目选择你刚刚添加的 Kit 包即可
 - 配置与生成
   
   `ctrl+shift+p`输入`CMake: Configure`
-  ![pic4](VCconfig.png)
+  ![pic4](./imgs/VCconfig.png)
   `ctrl+shift+p`输入`CMake: Build`
-  ![pic5](VCbuild.png)
+  ![pic5](./imgs/VCbuild.png)
   如此已生成项目可执行文件，`ctrl+shift+p`输入`CMake: Debug`可调试
