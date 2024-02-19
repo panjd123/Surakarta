@@ -6,7 +6,7 @@
 enum class OPCODE : int {
     READY_OP = 200000,
     MOVE_OP,
-    GIVEUP_OP,
+    RESIGN_OP,
     REJECT_OP,
     LEAVE_OP,
     CHAT_OP,
