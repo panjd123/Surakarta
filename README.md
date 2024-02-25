@@ -1,5 +1,7 @@
 # 2023程序设计Ⅱ大作业：Surakarta 棋
 
+[![GitHub Repo stars](https://img.shields.io/github/stars/panjd123/Surakarta?label=Github%20stars)](https://github.com/panjd123/Surakarta)  **欢迎 star！**
+
 ## 实验说明
 
 本次实验中，你将用 `Qt` 开发一款“Surakarta 棋联机对战游戏”。
