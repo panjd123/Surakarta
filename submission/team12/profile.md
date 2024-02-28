@@ -1,12 +1,12 @@
 # 第12小组简介
-*****
+
 ### 小组介绍
 
-**队名**：**水稻试验田**
+**队名**：水稻试验田
 
-**口号**：**welcome to rice field!**
+**口号**：welcome to rice field!
 
-**队训**：**whatever**
+**队训**：whatever
 
 ### 小组成员
 
