@@ -177,7 +177,8 @@ enum class SurakartaIllegalMoveReason {
 
 #### 其他细节
 
-我建议不要修改 TODO 之外的内容，比如如果你要存储合法吃子列表，就在 `SurakartaRuleManager` 里存。我们会覆盖 tests 后测试，所以也不要修改 tests 下的文件。
+- 我们**建议**不要修改 TODO 之外的内容，比如如果你要存储合法吃子列表，就在 `SurakartaRuleManager` 里存，把不同的事情分在不同的文件里可以避免协作的时候 merge 冲突。
+- 我们**要求**不要修改 tests 下的内容，我们会替换这部分后进行测试。
 
 ## 关于大作业
 
