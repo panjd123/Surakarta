@@ -64,7 +64,7 @@ enum class SurakartaIllegalMoveReason {
     LEGAL_CAPTURE_MOVE,        // capture a opponent's piece, and the move consists at least one corner loop
     LEGAL_NON_CAPTURE_MOVE,    // just as the name
     ILLIGAL,                   // unused
-    NOT_PLAYER_TURN,           // unused, move when it's not the player's turn.
+    NOT_PLAYER_TURN,           // move when it's not the player's turn.
     OUT_OF_BOARD,              // from or to position is out of board
     NOT_PIECE,                 // move a position that is not a piece
     NOT_PLAYER_PIECE,          // move a piece that is not the player's
@@ -77,7 +77,7 @@ enum class SurakartaIllegalMoveReason {
 
 如果同时满足多个条件，我们按照定义的顺序输出：
 
-所以依次是 `OUT_OF_BOARD`，`NOT_PIECE`，`NOT_PLAYER_PIECE` 这几个很容易判断的。
+所以依次是 `NOT_PLAYER_TURN`，`OUT_OF_BOARD`，`NOT_PIECE`，`NOT_PLAYER_PIECE` 这几个很容易判断的。
 
 然后我们先区分吃子移动，和普通移动，很简单，如果终点是对方棋子，就是吃子移动，所以下一步就是判断合不合法了，普通移动很简单，只要横竖距离的差都小于1即可，重点是怎么判断吃子。
 
@@ -177,7 +177,8 @@ enum class SurakartaIllegalMoveReason {
 
 #### 其他细节
 
-我建议不要修改 TODO 之外的内容，比如如果你要存储合法吃子列表，就在 `SurakartaRuleManager` 里存。我们会覆盖 tests 后测试，所以也不要修改 tests 下的文件。
+- 我们**建议**不要修改 TODO 之外的内容，比如如果你要存储合法吃子列表，就在 `SurakartaRuleManager` 里存，把不同的事情分在不同的文件里可以避免协作的时候 merge 冲突。
+- 我们**要求**不要修改 tests 下的内容，我们会替换这部分后进行测试。
 
 ## 关于大作业
 
