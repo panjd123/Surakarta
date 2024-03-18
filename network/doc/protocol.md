@@ -111,7 +111,7 @@ enum class SurakartaIllegalMoveReason {
     LEGAL_CAPTURE_MOVE,        // capture a opponent's piece, and the move consists at least one corner loop
     LEGAL_NON_CAPTURE_MOVE,    // just as the name
     ILLIGAL,                   // unused
-    NOT_PLAYER_TURN,           // unused, move when it's not the player's turn.
+    NOT_PLAYER_TURN,           // move when it's not the player's turn.
     OUT_OF_BOARD,              // from or to position is out of board
     NOT_PIECE,                 // move a position that is not a piece
     NOT_PLAYER_PIECE,          // move a piece that is not the player's
@@ -125,8 +125,8 @@ enum class SurakartaEndReason {
     STALEMATE,     // both players can't make more move
     CHECKMATE,     // one player's all pieces are captured
     TRAPPED,       // unused, one player's pieces are all trapped, no legal move can be made.
-    RESIGN,        // unused, one player resigns.
-    TIMEOUT,       // unused, one player's time is out.
+    RESIGN,        // one player resigns.
+    TIMEOUT,       // one player's time is out.
     ILLIGAL_MOVE,  // one player makes an illegal move
 };
 ```
