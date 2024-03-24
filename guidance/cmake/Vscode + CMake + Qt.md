@@ -47,3 +47,5 @@ ___
   `ctrl+shift+p`输入`CMake: Build`
   ![pic5](./imgs/VCbuild.png)
   如此已生成项目可执行文件，`ctrl+shift+p`输入`CMake: Debug`可调试
+
+当然，你也可以用命令行指令完成上述编译操作。
