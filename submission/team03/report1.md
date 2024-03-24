@@ -118,6 +118,10 @@
 
 一开始 AI 算法中最后的“最大”写成了“最小”，导致几乎每局必输。在分析后想到可能是因为某处写反导致的，于是成功定位到了错误。
 
+## 原始数据
+
+各个层数下 AI 与随机 Agent 对局的胜率数据可以在[这里](attachment/ai-data-1.txt)看到。
+
 ## 特别鸣谢
 - [panjd123](https://github.com/panjd123/Surakarta)：为我们提供了[基础框架、标准程序和单元测试](https://github.com/panjd123/Surakarta-RuleAiTest)
 - [CH3COOH-JYR](https://github.com/CH3COOH-JYR)：为我们提供了算法的基础思路
