@@ -144,8 +144,8 @@
 
   - **本组代码broad_size_ = 8也可通过测试**
 
-  ![](\imgs\test1.png)
-  ![](\imgs\test2.png)
+  ![](imgs/test1.png)
+  ![](imgs/test2.png)
 - - -
 ### 1.2 JudgeEnd
 
@@ -314,7 +314,7 @@ int main() {
   - 走评分最高的棋子
 
 > 经过大量测试，该Ai的胜率约为**65%**
-![](\imgs\winrate.png)
+![](imgs/winrate.png)
 
 - - -
 > 后续算法更新，敬请期待！
@@ -326,7 +326,7 @@ int main() {
 > 这个部分完成的好吗？
   - 我们在限定时间内完成了所有任务，并且通过了所有测试用例。
   - 在make部分我们的代码不存在任何的Warning
-  ![](\imgs\make.png)
+  ![](imgs/make.png)
   - 代码内容充分使用了C++面向对象的知识（eg.见2.0 Ai与Random对战函数）
   - 代码内容里有充足的注释供大家理解
   
