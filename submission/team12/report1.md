@@ -18,7 +18,7 @@ ___min(board_size_-1-mypiece.GetPosition().y,mypiece.GetPosition().y)__
 的y棋线（当有距离为0，即该棋线是棋盘边缘时，这条棋线就不是吃子棋线），我们分别模拟棋子在这两条棋线上的移动，若在移动过程中无阻碍地碰到了目标棋子，那么就是一次可吃的步骤。
   ***
   在模拟棋子在某条吃子棋线上的移动时，我们先判断我方棋子和对方棋子是否均在该吃子棋线上，若不是如此，则二者不能互吃，该次模拟返回false。若均在该棋线上，则开始模拟移动。我们将吃子棋线对应的四条直线顺序储存在一个（vector）line中，并通过函数Judgeroad和Judgeindex来确定棋子本身在此line中的位置。通过Liftmypiece来做到在此line中将自己的位置变更为NONE，以此实现自己不会撞到自己。然后，用一个指针指向line中的我方棋子的位置，通过
-```
+```cpp
 index++;
 if(index==(int)board_size_){
 circle++;
@@ -27,7 +27,7 @@ roadnow=(roadnow+1)%4;
 }
 ```
 和
-```
+```cpp
 index--;
 if(index==-1){
 circle++;
