@@ -1,0 +1,29 @@
+depth = 3
+Win Rate: 93.77   Not Lost Rate: 96.88   Win:  5327 Lost:   177 Stalemate:   177
+
+
+
+depth = 4
+Win Rate: 95.41   Not Lost Rate: 99.56   Win:  3655 Lost:    17 Stalemate:   159
+Win Rate: 95.07   Not Lost Rate: 99.76   Win:   790 Lost:     2 Stalemate:    39
+Win Rate: 94.78   Not Lost Rate: 99.05   Win:   599 Lost:     6 Stalemate:    27
+Win Rate: 94.60   Not Lost Rate: 99.23   Win:   368 Lost:     3 Stalemate:    18
+
+Total: N = 5683
+Win Rate: 95.39   Not Lost Rate: 99.51   Win:  5412 Lost:    28 Stalemate:   243
+
+
+
+depth = 5
+Win Rate: 99.24   Not Lost Rate: 100.00   Win:   130 Lost:     0 Stalemate:     1
+Win Rate: 97.76   Not Lost Rate: 100.00   Win:   131 Lost:     0 Stalemate:     3
+Win Rate: 97.66   Not Lost Rate: 100.00   Win:   125 Lost:     0 Stalemate:     3
+Win Rate: 97.87   Not Lost Rate: 100.00   Win:   138 Lost:     0 Stalemate:     3
+Win Rate: 95.59   Not Lost Rate: 100.00   Win:   130 Lost:     0 Stalemate:     6
+Win Rate: 97.20   Not Lost Rate: 100.00   Win:   139 Lost:     0 Stalemate:     4
+Win Rate: 96.99   Not Lost Rate: 100.00   Win:   129 Lost:     0 Stalemate:     4
+Win Rate: 96.19   Not Lost Rate: 99.68    Win:   303 Lost:     1 Stalemate:    11
+Win Rate: 96.06   Not Lost Rate: 100.00   Win:   609 Lost:     0 Stalemate:    25
+
+Total: N = 1895
+Win Rate: 96.78   Not Lost Rate: 99.95    Win:  1834 Lost:     1 Stalemate:    60
