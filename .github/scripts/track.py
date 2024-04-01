@@ -1,8 +1,9 @@
+import os
 import os.path as osp
 import json
 
 SUBMISSION_ROOT = osp.join(".", "submission")
-GITHUB_ROOT = osp.join(".", ".github")
+STATUS_ROOT = osp.join(".", "submission", "status")
 TEAM_NUM = 17
 STAGE_NUM = 4
 TEAMS = ["team" + str(i).zfill(2) for i in range(1, TEAM_NUM + 1)]
@@ -27,7 +28,7 @@ def parse_unfinished(unfinished):
     return status_txt, status_json
 
 
-def main():
+def track():
     unfinished = [[] for _ in range(STAGE_NUM)]
     for team in TEAMS:
         team_id = int(team[4:])
@@ -60,7 +61,10 @@ def main():
     return unfinished
 
 
-status_txt, status_json = parse_unfinished(main())
-with open(osp.join(GITHUB_ROOT, "datas", "status.txt"), "w") as f:
+if not osp.exists(STATUS_ROOT):
+    os.makedirs(STATUS_ROOT)
+
+status_txt, status_json = parse_unfinished(track())
+with open(osp.join(STATUS_ROOT, "status.txt"), "w") as f:
     f.write(status_txt)
-json.dump(status_json, open(osp.join(GITHUB_ROOT, "datas", "status.json"), "w"))
+json.dump(status_json, open(osp.join(STATUS_ROOT, "status.json"), "w"))
