@@ -1,0 +1,27 @@
+name: Track Submissions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  traverse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8' # Specify the Python version
+
+      - name: Install dependencies
+        run: |
+          # Install any dependencies here
+          # For example, if you need 'requests', uncomment the next line
+          # pip install requests
+
+      - name: Run script
+        run: python .github/scripts/track.py
