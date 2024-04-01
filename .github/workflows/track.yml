@@ -33,5 +33,3 @@ jobs:
           author_email: action@github.com
           message: "bot: track submissions"
           add: '.github/datas'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
