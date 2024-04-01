@@ -27,9 +27,9 @@ jobs:
         run: mkdir -p .github/datas && python .github/scripts/track.py
 
       - name: Commit changes
-        run: |
-          git config --local user.name "GitHub Actions"
-          git config --local user.email "actions@github.com"
-          git add .github/datas/*
-          git commit -m "bot: update status"
-          git push
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: action@github.com
+          message: "bot: track submissions"
+          add: '.github/datas'
