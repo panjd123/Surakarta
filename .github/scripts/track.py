@@ -1,30 +1,37 @@
 import os.path as osp
+import json
 
-ROOT = osp.join(".", "submission")
+SUBMISSION_ROOT = osp.join(".", "submission")
+GITHUB_ROOT = osp.join(".", ".github")
 TEAM_NUM = 17
 STAGE_NUM = 4
 TEAMS = ["team" + str(i).zfill(2) for i in range(1, TEAM_NUM + 1)]
 
 
 def parse_unfinished(unfinished):
-    print("Status:\n")
+    status_txt = ""
+    status_json = {}
     for i in range(STAGE_NUM):
-        print(f"Stage {i}: {len(unfinished[i])} / {TEAM_NUM}")
+        status_txt += f"Stage {i}: {TEAM_NUM - len(unfinished[i])} / {TEAM_NUM}\n"
+        status_json.update(
+            {f"stage{i}": f"{TEAM_NUM - len(unfinished[i])} / {TEAM_NUM}"}
+        )
         if len(unfinished[i]) == TEAM_NUM:
-            print("  All teams are unfinished.")
+            status_txt += "  All teams are unfinished.\n"
         elif len(unfinished[i]) == 0:
-            print("  All teams are finished.")
+            status_txt += "  All teams are finished.\n"
         else:
             for team in unfinished[i]:
-                print(f"  {team}")
-        print("")
+                status_txt += f"  {team}\n"
+        status_txt += "\n"
+    return status_txt, status_json
 
 
 def main():
     unfinished = [[] for _ in range(STAGE_NUM)]
     for team in TEAMS:
         team_id = int(team[4:])
-        team_dir = osp.join(ROOT, team)
+        team_dir = osp.join(SUBMISSION_ROOT, team)
         prefixes = [lambda _: "report", lambda _: "stage"]
         suffixes = [lambda x: str(x), lambda x: str(x).zfill(2)]
 
@@ -53,4 +60,7 @@ def main():
     return unfinished
 
 
-parse_unfinished(main())
+status_txt, status_json = parse_unfinished(main())
+with open(osp.join(GITHUB_ROOT, "datas", "status.txt"), "w") as f:
+    f.write(status_txt)
+json.dump(status_json, open(osp.join(GITHUB_ROOT, "datas", "status.json"), "w"))
