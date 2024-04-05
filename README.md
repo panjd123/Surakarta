@@ -2,6 +2,7 @@
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/panjd123/Surakarta?label=Github%20stars)](https://github.com/panjd123/Surakarta)  **欢迎 star！**
 
+相关仓库：[第一阶段 Surakarta-RuleAiTest](https://github.com/panjd123/Surakarta-RuleAiTest)
 
 ## 实验说明
 
