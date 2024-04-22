@@ -1,8 +1,8 @@
 Stage 0: 17 / 17
   All teams are finished.
 
-Stage 1: 16 / 17
-  team11
+Stage 1: 17 / 17
+  All teams are finished.
 
 Stage 2: 9 / 17
   team03
