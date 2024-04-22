@@ -5,9 +5,7 @@ Stage 1: 15 / 17
   team11
   team17
 
-
-Stage 2: 2 / 17
-  team01
+Stage 2: 3 / 17
   team03
   team04
   team05
