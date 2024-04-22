@@ -8,6 +8,7 @@ on:
 jobs:
   traverse:
     runs-on: ubuntu-latest
+    if: github.repository == 'panjd123/Surakarta'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
