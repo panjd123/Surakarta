@@ -8,7 +8,7 @@ Stage 2: 8 / 17
   team03
   team04
   team05
-  team07
+  team06
   team11
   team12
   team13
