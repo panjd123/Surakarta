@@ -152,6 +152,7 @@ enum class SurakartaIllegalMoveReason {
         }
         // lines[i] and lines[j]
     }
+    ```
 
 
     这可能会有重复，比如只有两条线时 `i, j` 和 `j, i`，是否去重并不是很重要的问题（也就是变成组合），或者另一个极端，总是重复（变成排列），以下按照组合描述（也就是假设 i j 和 j i 不会都出现）。
