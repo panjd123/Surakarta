@@ -1,0 +1,20 @@
+Stage 0: 17 / 17
+  All teams are finished.
+
+Stage 1: 16 / 17
+  team11
+
+Stage 2: 8 / 17
+  team03
+  team04
+  team05
+  team06
+  team11
+  team12
+  team13
+  team14
+  team17
+
+Stage 3: 0 / 17
+  All teams are unfinished.
+

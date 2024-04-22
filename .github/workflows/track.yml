@@ -1,0 +1,36 @@
+name: Track Submissions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  traverse:
+    runs-on: ubuntu-latest
+    if: github.repository == 'panjd123/Surakarta'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8' # Specify the Python version
+
+      - name: Install dependencies
+        run: |
+          # Install any dependencies here
+          # For example, if you need 'requests', uncomment the next line
+          # pip install requests
+
+      - name: Run script
+        run: python .github/scripts/track.py
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: action@github.com
+          message: "bot: track submissions"
+          add: '.'
