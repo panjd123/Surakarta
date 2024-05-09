@@ -1,11 +1,5 @@
 # 第二阶段报告
 
-![image-20240503210034205](C:\Users\USER\AppData\Roaming\Typora\typora-user-images\image-20240503210034205.png)
-
-`
-
-
-
 - 类的关系
 
   class SurakartaBoard里引用了SurakartaPosition和SurakartaPiece的成员
