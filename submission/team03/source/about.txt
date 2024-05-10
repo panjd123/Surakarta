@@ -1,0 +1,1 @@
+Please use umbrello to open architecture.xmi.
