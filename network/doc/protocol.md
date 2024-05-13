@@ -99,7 +99,7 @@
 
 - `data1`: SurakartaIllegalMoveReason，如果 EndReason 是 RESIGN 或 TIMEOUT 等与 move 无关的原因，则此处可为空。
 - `data2`: SurakartaEndReason
-- `data3`: 获胜方 PieceColor，若平局则为空
+- `data3`: 获胜方 PieceColor，比如平局则为 `PieceColor::NONE` 对应的枚举变量
 
 ```c++
 enum class PieceColor : PieceColorMemoryType {
