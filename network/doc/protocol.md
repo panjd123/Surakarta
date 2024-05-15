@@ -75,6 +75,8 @@
 
 坐标编码：用 `A1`，`F6` 这种表示，坐标轴方向同 [surakarta.md](../../guidance/surakarta/surakarta.md) 中所示（特别地，若你显示时需要旋转棋盘，坐标的对应关系应该不变，如初始棋盘下，A1总是对应了黑棋，即时你旋转180度后左上角看起来是白棋）。
 
+理论上，客户端收到的 `MOVE_OP` 只会是对方的移动，故无需发送执棋颜色，由服务端维护一个 `QTcpSocket* ` 与 `PieceColor` 的映射关系，并正确转发 `MOVE_OP`。
+
 > 关于服务端的超时判断，我们规定：服务端将 `MOVE_OP` 转发给客户端后开始计时（特别地，开始游戏时是 `READY_OP` 发送给两个客户端后开始计时），如果在规定时间内客户端没有收到 `MOVE_OP`则判断超时，即使此时客户端已经发送了 `MOVE_OP` 但是还没传输到或者还没被服务端处理（所以建议客户端发送留出一点点余量，比如 0.5s）。
 
 ### `RESIGN_OP`
@@ -93,12 +95,11 @@
 
 `END_OP`表示游戏结束，服务端向双方发送结束信息，客户端在收到后应该立刻停止其他操作，进行结算显示。
 
-这个回复和第一阶段中的 SurakartaMoveResponse 有几乎完全相同的含义，除了超时和投降时不需要提供 move 的信息，以及枚举变量发送的是字符串形式的整数！！！，请不要发成枚举变量的名字。
+这个回复和第一阶段中的 SurakartaMoveResponse 有几乎完全相同的含义，除了超时和投降时不需要提供 move 的信息，以及枚举变量发送的是字符串形式的整数！！！请不要发成枚举变量的名字。
 
 - `data1`: SurakartaIllegalMoveReason，如果 EndReason 是 RESIGN 或 TIMEOUT 等与 move 无关的原因，则此处可为空。
 - `data2`: SurakartaEndReason
-- `data3`: PieceColor
-
+- `data3`: 获胜方 PieceColor，比如平局则为 `PieceColor::NONE` 对应的枚举变量
 
 ```c++
 enum class PieceColor : PieceColorMemoryType {
