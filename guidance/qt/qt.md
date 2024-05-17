@@ -267,6 +267,12 @@ MainWindow::MainWindow(QWidget *parent)
 
 阅读这份代码，理解服务器和客户端之间如何交互的。
 
+### Qt 打包
+
+默认编译出来的可执行文件是依赖于许多动态链接库的，这导致如果你把 exe 文件直接发给别人是无法打开的，为此你需要将这些内容进行打包。
+
+详细内容请 Google/Baidu "Qt windows 打包"
+
 ### 拓展阅读
 
 [一些重要的网络协议介绍](https://www.cnblogs.com/fzz9/p/8964513.html)
