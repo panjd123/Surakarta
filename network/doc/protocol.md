@@ -77,7 +77,7 @@
 
 理论上，客户端收到的 `MOVE_OP` 只会是对方的移动，故无需发送执棋颜色，由服务端维护一个 `QTcpSocket* ` 与 `PieceColor` 的映射关系，并正确转发 `MOVE_OP`。
 
-> 关于服务端的超时判断，我们规定：服务端将 `MOVE_OP` 转发给客户端后开始计时（特别地，开始游戏时是 `READY_OP` 发送给两个客户端后开始计时），如果在规定时间内客户端没有收到 `MOVE_OP`则判断超时，即使此时客户端已经发送了 `MOVE_OP` 但是还没传输到或者还没被服务端处理（所以建议客户端发送留出一点点余量，比如 0.5s）。
+> 关于服务端的超时判断，我们规定：服务端将 `MOVE_OP` 转发给客户端后开始计时（特别地，开始游戏时是 `READY_OP` 发送给两个客户端后开始计时），如果在规定时间内服务端没有收到 `MOVE_OP`则判断超时，即使此时客户端已经发送了 `MOVE_OP` 但是还没传输到或者还没被服务端处理（所以建议客户端发送留出一点点余量，比如 0.5s，其实校园网的延迟是很低的）。
 
 ### `RESIGN_OP`
 
@@ -100,6 +100,8 @@
 - `data1`: SurakartaIllegalMoveReason，如果 EndReason 是 RESIGN 或 TIMEOUT 等与 move 无关的原因，则此处可为空。
 - `data2`: SurakartaEndReason
 - `data3`: 获胜方 PieceColor，比如平局则为 `PieceColor::NONE` 对应的枚举变量
+
+这里三个量都回复数字，包括颜色，这和 `READY_OP` 中的不同。
 
 ```c++
 enum class PieceColor : PieceColorMemoryType {
@@ -135,6 +137,8 @@ enum class SurakartaEndReason {
 ### `LEAVE_OP`
 
 任何时候，发送 `LEAVE_OP` 说明即将立刻断开连接，如果在游戏进行时离开，视作投降。
+
+建议在结束离开时发送以告知服务器。游戏中建议正常放弃，即用 `RESIGN_OP`。因为第三阶段只要求实现最小的可支持一局比赛的操作，所以事实上可以不实现这个操作。
 
 - `data1`: 己方用户名（空）
 - `data2`: 离开的原因（空）
