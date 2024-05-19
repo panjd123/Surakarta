@@ -60,7 +60,7 @@
 
 王燚 (GitHub: smallsmallprogrammer)：
 
-- 负责在 Windows 平台打包了 Surakarta-server-demo 与 Surakarta-client-demo，即我们的提交内容，并发布了 [Surakarta-client-demo-v1.0](https://github.com/CoderBak/Surakarta-client-demo/releases/tag/v1.0) 与 [Surakarta-server-demo-v1.0](https://github.com/CoderBak/Surakarta-server-demo/releases/tag/v1.0)
+- 负责在 Windows 平台打包了 Surakarta-server-demo 与 Surakarta-client-demo，即我们的提交内容，并发布了 [Surakarta-client-demo-v1.1](https://github.com/CoderBak/Surakarta-client-demo/releases/tag/v1.1) 与 [Surakarta-server-demo-v1.1](https://github.com/CoderBak/Surakarta-server-demo/releases/tag/v1.1)
 
 - 开发了第一版棋子动画，包括：选中特效
 
