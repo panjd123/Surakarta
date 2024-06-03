@@ -10,9 +10,8 @@ Stage 2: 13 / 17
   team14
   team17
 
-Stage 3: 10 / 17
+Stage 3: 11 / 17
   team03
-  team04
   team09
   team11
   team13
